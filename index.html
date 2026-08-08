@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruzzel Palabyab | Remote Truck Dispatch & Sales VA</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandOrange: {
+                            50: '#FFF7ED',
+                            500: '#F97316',
+                            600: '#EA580C',
+                            700: '#C2410C'
+                        },
+                        brandBlue: {
+                            50: '#EFF6FF',
+                            100: '#DBEAFE',
+                            500: '#3B82F6',
+                            600: '#2563EB',
+                            700: '#1D4ED8',
+                            800: '#1E40AF'
+                        },
+                        navy: {
+                            900: '#0F172A',
+                            950: '#0A1120',
+                            1000: '#070C18'
+                        },
+                        bgLight: '#FAFCFF',
+                        borderLight: '#E2E8F0'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Background Grid Pattern for Hero */
+        .bg-grid-pattern {
+            background-color: #FAFCFF;
+            background-image: 
+                linear-gradient(to right, rgba(226, 232, 240, 0.4) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(226, 232, 240, 0.4) 1px, transparent 1px);
+            background-size: 36px 36px;
+        }
+
+        /* Profile RP Gradient Box */
+        .rp-gradient-box {
+            background: linear-gradient(135deg, #1E293B 0%, #475569 50%, #EA580C 100%);
+        }
+
+        ::selection {
+            background-color: #EA580C;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-bgLight min-h-screen flex flex-col selection:bg-brandOrange-500 selection:text-white">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg bg-navy-950 flex items-center justify-center relative shadow-sm">
+                        <span class="w-2.5 h-2.5 rounded-full bg-brandOrange-500 absolute top-2 left-2"></span>
+                    </div>
+                    <span class="font-heading font-extrabold text-lg text-slate-900 tracking-tight">
+                        Ruzzel <span class="text-brandBlue-600">Palabyab</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-600">
+                    <a href="#about" class="hover:text-brandBlue-600 transition-colors">About</a>
+                    <a href="#services" class="hover:text-brandBlue-600 transition-colors">Services</a>
+                    <a href="#achievements" class="hover:text-brandBlue-600 transition-colors">Achievements</a>
+                    <a href="#courses" class="hover:text-brandBlue-600 transition-colors">Courses & Certifications</a>
+                    <a href="#rates" class="hover:text-brandBlue-600 transition-colors">Rates</a>
+                    <a href="#contact" class="hover:text-brandBlue-600 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Desktop Header Button -->
+                <div class="hidden sm:flex items-center">
+                    <a href="mailto:Ruzzwsp16@gmail.com" class="px-5 py-2.5 bg-brandOrange-600 hover:bg-brandOrange-700 text-white font-bold text-xs rounded-xl transition-all shadow-md flex items-center gap-2">
+                        <i class="fa-regular fa-envelope"></i> Email me
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-slate-700 hover:text-navy-950 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 py-5 space-y-4 text-sm font-semibold text-slate-700">
+            <a href="#about" onclick="toggleMobileMenu()" class="block hover:text-brandOrange-600">About</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block hover:text-brandOrange-600">Services</a>
+            <a href="#achievements" onclick="toggleMobileMenu()" class="block hover:text-brandOrange-600">Achievements</a>
+            <a href="#courses" onclick="toggleMobileMenu()" class="block hover:text-brandOrange-600">Courses & Certifications</a>
+            <a href="#rates" onclick="toggleMobileMenu()" class="block hover:text-brandOrange-600">Rates</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block hover:text-brandOrange-600">Contact</a>
+            <div class="pt-2 border-t border-slate-100">
+                <a href="mailto:Ruzzwsp16@gmail.com" class="w-full text-center py-2.5 bg-brandOrange-600 text-white font-bold rounded-xl flex items-center justify-center gap-2 text-xs">
+                    <i class="fa-regular fa-envelope"></i> Email me
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="bg-grid-pattern py-12 lg:py-20 border-b border-slate-200/60 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Content -->
+                <div class="lg:col-span-7 space-y-6">
+                    
+                    <!-- Pill Tag -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-slate-300 bg-white shadow-sm text-xs font-bold text-slate-700 tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-brandOrange-500"></span>
+                        <span>REMOTE TRUCK DISPATCH & SALES VA</span>
+                    </div>
+
+                    <!-- Main Headline -->
+                    <h1 class="text-4xl sm:text-6xl lg:text-[62px] font-heading font-extrabold text-navy-950 leading-[1.12] tracking-tight">
+                        I book the loads.<br/>
+                        <span class="text-brandBlue-600">I work the phones.</span><br/>
+                        You run the business.
+                    </h1>
+
+                    <!-- Paragraph -->
+                    <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl font-normal">
+                        I'm Ruzzel Palabyab, an Entry-Level remote virtual assistant for truck dispatch and sales support — load booking, broker outreach, rate confirmations, CRM, and follow-ups, handled daily so you're not doing it from the cab.
+                    </p>
+
+                    <!-- Hero Buttons -->
+                    <div class="pt-2 flex flex-wrap items-center gap-4">
+                        <a href="mailto:Ruzzwsp16@gmail.com" class="px-6 py-3.5 bg-brandOrange-600 hover:bg-brandOrange-700 text-white font-bold text-sm rounded-xl transition-all shadow-md flex items-center gap-2">
+                            <i class="fa-regular fa-envelope"></i> Email me
+                        </a>
+                        <a href="#services" class="px-6 py-3.5 bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 font-bold text-sm rounded-xl transition-all shadow-sm flex items-center gap-2">
+                            See what I handle <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500"></i>
+                        </a>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="pt-4 flex flex-wrap items-center gap-6 text-xs text-slate-600 font-medium">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-globe text-brandBlue-600"></i>
+                            <span>Flexible across US time zones</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-regular fa-clock text-brandBlue-600"></i>
+                            <span>Replies within one business day</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Hero Right Card ("A TYPICAL DAY") -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-xl relative">
+                        
+                        <!-- Card Header -->
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-xs font-bold text-brandBlue-600 tracking-wider uppercase">A TYPICAL DAY</span>
+                            <span class="px-3 py-1 rounded-full bg-orange-100/70 text-brandOrange-700 text-[11px] font-bold">Dispatch + Sales</span>
+                        </div>
+
+                        <!-- Check List Items -->
+                        <div class="space-y-3.5 mb-6">
+                            <div class="p-3.5 rounded-xl border border-slate-100 bg-slate-50/50 flex items-center gap-3">
+                                <div class="w-5 h-5 rounded-full border-2 border-brandOrange-500 flex items-center justify-center text-brandOrange-500 text-[10px] shrink-0">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-semibold text-slate-700">Morning load board sweep — DAT & Truckstop</span>
+                            </div>
+
+                            <div class="p-3.5 rounded-xl border border-slate-100 bg-slate-50/50 flex items-center gap-3">
+                                <div class="w-5 h-5 rounded-full border-2 border-brandOrange-500 flex items-center justify-center text-brandOrange-500 text-[10px] shrink-0">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-semibold text-slate-700">Rate confirmations & broker check calls</span>
+                            </div>
+
+                            <div class="p-3.5 rounded-xl border border-slate-100 bg-slate-50/50 flex items-center gap-3">
+                                <div class="w-5 h-5 rounded-full border-2 border-brandOrange-500 flex items-center justify-center text-brandOrange-500 text-[10px] shrink-0">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-semibold text-slate-700">CRM updates & shipper follow-up emails</span>
+                            </div>
+
+                            <div class="p-3.5 rounded-xl border border-slate-100 bg-slate-50/50 flex items-center gap-3">
+                                <div class="w-5 h-5 rounded-full border-2 border-brandOrange-500 flex items-center justify-center text-brandOrange-500 text-[10px] shrink-0">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-semibold text-slate-700">End-of-day report sent to you</span>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Banner in Card -->
+                        <div class="bg-navy-950 rounded-2xl p-4 flex items-center justify-between text-white">
+                            <span class="text-xs font-medium text-slate-300">Response time</span>
+                            <span class="text-sm font-bold text-white">Same day</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Process Timeline Dots Bar -->
+            <div class="mt-16 pt-10 border-t border-slate-200/80">
+                <div class="relative flex items-center justify-between max-w-5xl mx-auto">
+                    <!-- Connector Line -->
+                    <div class="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-[2px] bg-slate-200 z-0"></div>
+
+                    <!-- Step 1 -->
+                    <div class="relative z-10 bg-bgLight px-3 flex flex-col items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-brandOrange-500 ring-4 ring-bgLight"></span>
+                        <span class="text-[11px] font-extrabold text-navy-950 uppercase tracking-wider">INQUIRY</span>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative z-10 bg-bgLight px-3 flex flex-col items-center gap-2">
+                        <span class="w-3.5 h-3.5 rounded-full border-2 border-brandBlue-600 bg-white ring-4 ring-bgLight"></span>
+                        <span class="text-[11px] font-extrabold text-brandBlue-600 uppercase tracking-wider">ONBOARD</span>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative z-10 bg-bgLight px-3 flex flex-col items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-brandOrange-500 ring-4 ring-bgLight"></span>
+                        <span class="text-[11px] font-extrabold text-navy-950 uppercase tracking-wider">DISPATCH</span>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="relative z-10 bg-bgLight px-3 flex flex-col items-center gap-2">
+                        <span class="w-3.5 h-3.5 rounded-full border-2 border-brandBlue-600 bg-white ring-4 ring-bgLight"></span>
+                        <span class="text-[11px] font-extrabold text-brandBlue-600 uppercase tracking-wider">FOLLOW-UP</span>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="relative z-10 bg-bgLight px-3 flex flex-col items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-brandOrange-500 ring-4 ring-bgLight"></span>
+                        <span class="text-[11px] font-extrabold text-navy-950 uppercase tracking-wider">REPORT</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 1: ABOUT ME -->
+    <section id="about" class="py-20 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="mb-10">
+                <span class="text-xs font-bold uppercase tracking-wider text-brandOrange-600 block mb-2">ABOUT ME</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-navy-950 tracking-tight">
+                    The person behind your dispatch board
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Left RP Graphic Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-navy-950 rounded-full p-2 sm:p-3 aspect-square shadow-xl">
+                        <!-- Profile Picture in a circle with border -->
+                        <div class="w-full h-full rounded-full overflow-hidden border-2 border-white/20 shadow-2xl">
+                            <img 
+                                src="https://user21966.na.imgto.link/public/20260808/best-pic-so-far.avif" 
+                                alt="Ruzzel Palabyab" 
+                                class="w-full h-full object-cover"
+                                style="object-position: 60% center; transform: scale(1.15) translateY(-3%);"
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right About Copy & Features -->
+                <div class="lg:col-span-7 space-y-6">
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        Hi, I'm Ruzzel Palabyab, a remote virtual assistant specializing in truck dispatch and sales support for owner-operators, small carriers, business owners, sales managers, and clients. I take on the parts of the job that eat your time — load sourcing, negotiations, CRM, prospecting, outreach — so you can stay focused on the road or the bigger picture of running your fleet.
+                    </p>
+
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        I treat every load, call, and prospect like it’s my own business on the line—backed by the research, communication, follow-up, paperwork, and persistence to see every opportunity through.
+                    </p>
+
+                    <!-- 2x2 Feature Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+                        
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-9 h-9 rounded-lg bg-blue-50 text-brandBlue-600 flex items-center justify-center shrink-0 text-sm">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">US time-zone availability</h4>
+                                <p class="text-xs text-slate-500 mt-1 leading-normal">Scheduled around your business hours, not mine.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-9 h-9 rounded-lg bg-blue-50 text-brandBlue-600 flex items-center justify-center shrink-0 text-sm">
+                                <i class="fa-solid fa-keyboard"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Fast, accurate data entry</h4>
+                                <p class="text-xs text-slate-500 mt-1 leading-normal">Rate cons, BOLs, and CRM records logged without errors.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-9 h-9 rounded-lg bg-blue-50 text-brandBlue-600 flex items-center justify-center shrink-0 text-sm">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Clear, direct communication</h4>
+                                <p class="text-xs text-slate-500 mt-1 leading-normal">You get straight answers and status updates, not guesswork.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-9 h-9 rounded-lg bg-blue-50 text-brandBlue-600 flex items-center justify-center shrink-0 text-sm">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Detail-oriented follow-through</h4>
+                                <p class="text-xs text-slate-500 mt-1 leading-normal">Nothing sits in an inbox — every task gets closed out.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Tools & Platforms Pill Tags -->
+                    <div class="pt-6 border-t border-slate-100 space-y-3">
+                        <div class="flex items-center gap-2 text-xs font-bold text-brandBlue-600 uppercase tracking-wider">
+                            <i class="fa-solid fa-wrench"></i>
+                            <span>TOOLS & PLATFORMS I WORK IN</span>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
+                            <span class="px-3.5 py-1.5 rounded-full border border-slate-200 bg-white">DAT</span>
+                            <span class="px-3.5 py-1.5 rounded-full border border-slate-200 bg-white">Truckstop.com</span>
+                            <span class="px-3.5 py-1.5 rounded-full border border-slate-200 bg-white">DOFT</span>
+                            <span class="px-3.5 py-1.5 rounded-full border border-slate-200 bg-white">Claude AI</span>
+                            <span class="px-3.5 py-1.5 rounded-full border border-slate-200 bg-white">Fireflies AI</span>
+                            <span class="px-3.5 py-1.5 rounded-full border border-slate-200 bg-white">Microsoft Office</span>
+                            <span class="px-3.5 py-1.5 rounded-full border border-slate-200 bg-white">Google Workspace</span>
+                            <span class="px-3.5 py-1.5 rounded-full border border-slate-200 bg-white">Zoom</span>
+                            <span class="px-3.5 py-1.5 rounded-full border border-slate-200 bg-white">GoHighLevel</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 2: WHAT I HANDLE -->
+    <section id="services" class="py-20 bg-bgLight border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="mb-12">
+                <span class="text-xs font-bold uppercase tracking-wider text-brandOrange-600 block mb-2">WHAT I HANDLE</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-navy-950 tracking-tight">
+                    Two roles, one dedicated assistant
+                </h2>
+            </div>
+
+            <!-- Two Main Service Cards Side-by-Side -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                
+                <!-- Dark Dispatch Card -->
+                <div class="bg-navy-950 rounded-3xl p-8 text-white flex flex-col justify-between space-y-6 shadow-xl">
+                    <div class="space-y-6">
+                        <div class="w-10 h-10 rounded-xl bg-slate-800 text-brandOrange-500 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-route"></i>
+                        </div>
+
+                        <h3 class="text-2xl font-heading font-bold text-white">Truck dispatch support</h3>
+
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            I source and book your loads, negotiate rate confirmations, and stay on top of check calls and ETAs — so your trucks keep moving without you working the load boards yourself.
+                        </p>
+
+                        <ul class="space-y-3 text-xs sm:text-sm text-slate-200 pt-2">
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 rounded-full bg-brandOrange-500"></span>
+                                <span>Load sourcing across DAT, Truckstop & private boards</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 rounded-full bg-brandOrange-500"></span>
+                                <span>Rate confirmation & broker negotiation</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 rounded-full bg-brandOrange-500"></span>
+                                <span>Check calls and ETA tracking</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 rounded-full bg-brandOrange-500"></span>
+                                <span>Rate-con, BOL & POD paperwork handling</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Light Sales Card -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 text-slate-800 flex flex-col justify-between space-y-6 shadow-md">
+                    <div class="space-y-6">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 text-brandBlue-600 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+
+                        <h3 class="text-2xl font-heading font-bold text-slate-900">Sales & lead-generation VA</h3>
+
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            I work your broker and shipper outreach daily — cold calls, CRM upkeep, and appointment setting — so your lane list keeps growing without you making the calls.
+                        </p>
+
+                        <ul class="space-y-3 text-xs sm:text-sm text-slate-700 pt-2">
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 rounded-full bg-brandOrange-500"></span>
+                                <span>Outbound calls & emails</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 rounded-full bg-brandOrange-500"></span>
+                                <span>Lead qualification and GoHighLevel CRM management</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 rounded-full bg-brandOrange-500"></span>
+                                <span>Appointment setting for your sales calls</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Full-width General VA Support Banner -->
+            <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+                <h3 class="text-lg font-heading font-bold text-slate-900">General VA support, when you need it</h3>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 text-brandBlue-600 flex items-center justify-center shrink-0">
+                            <i class="fa-regular fa-calendar-check text-sm"></i>
+                        </div>
+                        <span class="text-xs sm:text-sm font-semibold text-slate-800">Email & calendar management</span>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 text-brandBlue-600 flex items-center justify-center shrink-0">
+                            <i class="fa-regular fa-file-lines text-sm"></i>
+                        </div>
+                        <span class="text-xs sm:text-sm font-semibold text-slate-800">Data entry & document prep</span>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 text-brandBlue-600 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-headset text-sm"></i>
+                        </div>
+                        <span class="text-xs sm:text-sm font-semibold text-slate-800">Customer service & follow-up calls</span>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 text-brandBlue-600 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-layer-group text-sm"></i>
+                        </div>
+                        <span class="text-xs sm:text-sm font-semibold text-slate-800">Reporting & spreadsheet upkeep</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 3: ACHIEVEMENTS -->
+    <section id="achievements" class="py-20 bg-navy-950 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="mb-12">
+                <span class="text-xs font-bold uppercase tracking-wider text-brandOrange-500 block mb-2">ACHIEVEMENTS</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white tracking-tight">
+                    What I've built up so far
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                
+                <div class="border-l-2 border-brandOrange-500 pl-6 space-y-1">
+                    <div class="text-4xl sm:text-5xl font-heading font-extrabold text-white">60 WPM</div>
+                    <p class="text-xs text-slate-400 font-medium">typing speed for fast, accurate data entry</p>
+                </div>
+
+                <div class="border-l-2 border-brandOrange-500 pl-6 space-y-1">
+                    <div class="text-4xl sm:text-5xl font-heading font-extrabold text-white">6+</div>
+                    <p class="text-xs text-slate-400 font-medium">dispatch, freight & AI tools learned hands-on</p>
+                </div>
+
+                <div class="border-l-2 border-brandOrange-500 pl-6 space-y-1">
+                    <div class="text-4xl sm:text-5xl font-heading font-extrabold text-white">20+ hrs</div>
+                    <p class="text-xs text-slate-400 font-medium">dedicated dispatch & sales training completed</p>
+                </div>
+
+                <div class="border-l-2 border-brandOrange-500 pl-6 space-y-1">
+                    <div class="text-4xl sm:text-5xl font-heading font-extrabold text-white">Wed–Sun</div>
+                    <p class="text-xs text-slate-400 font-medium">flexible availability across US time zones</p>
+                </div>
+
+            </div>
+
+            <div class="pt-10 border-t border-slate-800/80">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-slate-300">
+                    
+                    <div class="flex items-start gap-3">
+                        <div class="w-5 h-5 rounded-full border border-brandOrange-500 flex items-center justify-center text-brandOrange-500 text-[10px] shrink-0 mt-0.5">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <span>Completed truck dispatch workflow training—load sourcing, broker communication, and POD collection.</span>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <div class="w-5 h-5 rounded-full border border-brandOrange-500 flex items-center justify-center text-brandOrange-500 text-[10px] shrink-0 mt-0.5">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <span>Practiced cold-calling and objection handling for broker and shipper outreach.</span>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <div class="w-5 h-5 rounded-full border border-brandOrange-500 flex items-center justify-center text-brandOrange-500 text-[10px] shrink-0 mt-0.5">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <span>Built working knowledge of CRM and lead qualification</span>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <div class="w-5 h-5 rounded-full border border-brandOrange-500 flex items-center justify-center text-brandOrange-500 text-[10px] shrink-0 mt-0.5">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <span>Comfortable managing multiple load boards and AI productivity tools at once</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 4: COURSES & CERTIFICATIONS -->
+    <section id="courses" class="py-20 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="mb-12">
+                <span class="text-xs font-bold uppercase tracking-wider text-brandOrange-600 block mb-2">COURSES & CERTIFICATIONS</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-navy-950 tracking-tight">
+                    Trained specifically for this work
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Course 1 -->
+                <div class="bg-bgLight rounded-3xl p-8 border border-slate-200/80 flex items-start gap-5">
+                    <div class="w-12 h-12 rounded-2xl bg-orange-100/80 text-brandOrange-600 flex items-center justify-center shrink-0 text-xl">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-brandBlue-600">COURSE</span>
+                        <h3 class="text-lg font-heading font-bold text-slate-900">Freight Course 101</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Covered the fundamentals of truck dispatching, including industry terminology, dispatch workflows, hands-on DOFT load board practice, HOS compliance awareness, load organization through MS Excel, and introductory concepts in TMS, GPS, and ELD systems.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Certificate 1 -->
+                <div class="bg-bgLight rounded-3xl p-8 border border-slate-200/80 flex items-start gap-5">
+                    <div class="w-12 h-12 rounded-2xl bg-orange-100/80 text-brandOrange-600 flex items-center justify-center shrink-0 text-xl">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-brandBlue-600">CERTIFICATE</span>
+                        <h3 class="text-lg font-heading font-bold text-slate-900">3-day Freight VA Challenge Completion</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Truck Dispatching Training Certification — Gained knowledge of industry terminology and dispatch workflows, with hands-on DOFT load board training, HOS awareness, MS Excel-based load management, and introductory exposure to TMS, GPS, and ELD systems.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="bg-bgLight rounded-3xl p-8 border border-slate-200/80 flex items-start gap-5">
+                    <div class="w-12 h-12 rounded-2xl bg-orange-100/80 text-brandOrange-600 flex items-center justify-center shrink-0 text-xl">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-brandBlue-600">COURSE</span>
+                        <h3 class="text-lg font-heading font-bold text-slate-900">The Parliament+ — Remote Sales Training & Community</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Member of The Parliament+ community, completing training focused on remote sales, lead generation, prospecting, cold outreach, appointment setting, sales communication, and client acquisition.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="bg-bgLight rounded-3xl p-8 border border-slate-200/80 flex items-start gap-5">
+                    <div class="w-12 h-12 rounded-2xl bg-orange-100/80 text-brandOrange-600 flex items-center justify-center shrink-0 text-xl">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-brandBlue-600">COURSE</span>
+                        <h3 class="text-lg font-heading font-bold text-slate-900">Remote Virtual Assistant Fundamentals</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Virtual Assistant Fundamentals — Foundational training in remote administrative support, digital workspace organization, client communication, task and schedule management, document handling, and maintaining efficient day-to-day virtual operations.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 5: RATES -->
+    <section id="rates" class="py-20 bg-bgLight border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="mb-12">
+                <span class="text-xs font-bold uppercase tracking-wider text-brandOrange-600 block mb-2">RATES</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-navy-950 tracking-tight">
+                    Simple hourly pricing
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-8 items-stretch mb-8">
+                
+                <!-- Pricing Card 1: Dispatch Support -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-heading font-bold text-slate-900">Dispatch support</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            For owner-operators who need loads booked and paperwork handled.
+                        </p>
+
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-4xl font-heading font-extrabold text-slate-900">$6</span>
+                            <span class="text-xs text-slate-500 font-semibold">/ hr</span>
+                        </div>
+
+                        <ul class="space-y-3 text-xs sm:text-sm text-slate-700 pt-2">
+                            <li class="flex items-center gap-3">
+                                <span class="w-4 h-4 rounded-full border border-brandOrange-500 flex items-center justify-center text-brandOrange-500 text-[9px] shrink-0"><i class="fa-solid fa-check"></i></span>
+                                <span>Load booking & tracking</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-4 h-4 rounded-full border border-brandOrange-500 flex items-center justify-center text-brandOrange-500 text-[9px] shrink-0"><i class="fa-solid fa-check"></i></span>
+                                <span>Rate confirmations</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-4 h-4 rounded-full border border-brandOrange-500 flex items-center justify-center text-brandOrange-500 text-[9px] shrink-0"><i class="fa-solid fa-check"></i></span>
+                                <span>Check calls & ETA updates</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-4 h-4 rounded-full border border-brandOrange-500 flex items-center justify-center text-brandOrange-500 text-[9px] shrink-0"><i class="fa-solid fa-check"></i></span>
+                                <span>Weekly summary report</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-8">
+                        <a href="mailto:Ruzzwsp16@gmail.com?subject=Inquiry%20regarding%20Dispatch%20Support" class="w-full py-3.5 px-4 rounded-xl bg-brandOrange-600 hover:bg-brandOrange-700 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md">
+                            Discuss this plan <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pricing Card 2: Sales & lead-gen VA -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-heading font-bold text-slate-900">Sales & lead-gen VA</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            For fleets that need the phones worked and the pipeline filled.
+                        </p>
+
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-4xl font-heading font-extrabold text-slate-900">$5</span>
+                            <span class="text-xs text-slate-500 font-semibold">/ hr</span>
+                        </div>
+
+                        <ul class="space-y-3 text-xs sm:text-sm text-slate-700 pt-2">
+                            <li class="flex items-center gap-3">
+                                <span class="w-4 h-4 rounded-full border border-brandOrange-500 flex items-center justify-center text-brandOrange-500 text-[9px] shrink-0"><i class="fa-solid fa-check"></i></span>
+                                <span>Prospecting & cold outreach</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-4 h-4 rounded-full border border-brandOrange-500 flex items-center justify-center text-brandOrange-500 text-[9px] shrink-0"><i class="fa-solid fa-check"></i></span>
+                                <span>CRM & Pipeline Management</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-4 h-4 rounded-full border border-brandOrange-500 flex items-center justify-center text-brandOrange-500 text-[9px] shrink-0"><i class="fa-solid fa-check"></i></span>
+                                <span>Appointment setting</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-4 h-4 rounded-full border border-brandOrange-500 flex items-center justify-center text-brandOrange-500 text-[9px] shrink-0"><i class="fa-solid fa-check"></i></span>
+                                <span>Lead qualification & follow-up</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-8">
+                        <a href="mailto:Ruzzwsp16@gmail.com?subject=Inquiry%20regarding%20Sales%20%26%20Lead-Gen%20VA" class="w-full py-3.5 px-4 rounded-xl bg-brandOrange-600 hover:bg-brandOrange-700 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md">
+                            Discuss this plan <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Rates Footer Disclaimer -->
+            <p class="text-center text-xs text-slate-500 font-medium">
+                Rates are hourly and flexible based on scope — happy to put together a package that fits your operation.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- SECTION 6: CONTACT -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Left Info Area -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-wider text-brandOrange-600 block">GET IN TOUCH</span>
+                    
+                    <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-navy-950 tracking-tight">
+                        Let's talk about your operation
+                    </h2>
+
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Tell me about your lanes, your fleet, and where your time is going. I'll reply directly and we can figure out where a dispatcher or sales VA fits in.
+                    </p>
+
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-center gap-3 p-3.5 rounded-2xl bg-bgLight border border-slate-100 max-w-sm">
+                            <div class="w-9 h-9 rounded-xl bg-orange-100/70 text-brandOrange-600 flex items-center justify-center text-sm shrink-0">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <span class="text-xs font-bold text-slate-800">Ruzzwsp16@gmail.com</span>
+                        </div>
+
+                        <div class="flex items-center gap-3 p-3.5 rounded-2xl bg-bgLight border border-slate-100 max-w-sm">
+                            <div class="w-9 h-9 rounded-xl bg-orange-100/70 text-brandOrange-600 flex items-center justify-center text-sm shrink-0">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <span class="text-xs font-bold text-slate-800">Replies within one business day</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="mailto:Ruzzwsp16@gmail.com" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brandOrange-600 hover:bg-brandOrange-700 text-white text-xs font-bold shadow-md transition-all">
+                            <i class="fa-regular fa-envelope"></i> Email me directly
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Interactive Form Box -->
+                <div class="lg:col-span-7 bg-bgLight rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm">
+                    <form onsubmit="handleContactSubmit(event)" class="space-y-5">
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1.5">Full name</label>
+                                <input type="text" id="formName" required placeholder="Marisol Vega" class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-xs font-medium text-slate-800 focus:outline-none focus:border-brandBlue-600 transition-colors">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1.5">Email</label>
+                                <input type="email" id="formEmail" required placeholder="marisol@vegafreight.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-xs font-medium text-slate-800 focus:outline-none focus:border-brandBlue-600 transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1.5">What do you need help with?</label>
+                            <select id="formService" class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-xs font-medium text-slate-800 focus:outline-none focus:border-brandBlue-600 transition-colors">
+                                <option value="Truck dispatch support">Truck dispatch support</option>
+                                <option value="Sales & lead-gen VA">Sales & lead-gen VA</option>
+                                <option value="General VA support">General VA support</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1.5">Tell me a bit about your operation</label>
+                            <textarea id="formMessage" rows="4" required placeholder="Running 3 trucks out of dry van, currently booking loads myself and looking to hand it off..." class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-xs font-medium text-slate-800 focus:outline-none focus:border-brandBlue-600 transition-colors resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="px-6 py-3.5 rounded-xl bg-brandOrange-600 hover:bg-brandOrange-700 text-white font-bold text-xs transition-all shadow-md">
+                            Send message
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-950 text-white pt-16 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12">
+                
+                <!-- Col 1: Logo & Tagline -->
+                <div class="md:col-span-4 space-y-4">
+                    <a href="#home" class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-navy-900 border border-slate-700 flex items-center justify-center relative">
+                            <span class="w-2 h-2 rounded-full bg-brandOrange-500"></span>
+                        </div>
+                        <span class="font-heading font-extrabold text-base text-white tracking-tight">
+                            Ruzzel Palabyab
+                        </span>
+                    </a>
+                    <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+                        Remote truck dispatch and sales virtual assistant support — keeping loads booked and pipelines moving so you don't have to.
+                    </p>
+                </div>
+
+                <!-- Col 2: Services -->
+                <div class="md:col-span-3 space-y-3">
+                    <span class="text-xs font-bold text-white uppercase tracking-wider block">Services</span>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><a href="#services" class="hover:text-white transition-colors">Truck dispatch support</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Sales & lead-gen VA</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">CRM & pipeline management</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Admin & back-office support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Site -->
+                <div class="md:col-span-2 space-y-3">
+                    <span class="text-xs font-bold text-white uppercase tracking-wider block">Site</span>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="#achievements" class="hover:text-white transition-colors">Achievements</a></li>
+                        <li><a href="#courses" class="hover:text-white transition-colors">Courses & Certifications</a></li>
+                        <li><a href="#rates" class="hover:text-white transition-colors">Rates</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact -->
+                <div class="md:col-span-3 space-y-3">
+                    <span class="text-xs font-bold text-white uppercase tracking-wider block">Contact</span>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><a href="mailto:Ruzzwsp16@gmail.com" class="hover:text-white transition-colors font-medium text-slate-300">Ruzzwsp16@gmail.com</a></li>
+                        <li class="text-slate-400">Remote — available across US time zones</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Line Copyright -->
+            <div class="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+                <p>© 2026 Ruzzel Palabyab. All rights reserved.</p>
+                <p>Remote truck dispatch & sales virtual assistant services.</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        // Toggle mobile navigation menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Handle contact form submission directly triggering email client
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('formName').value;
+            const email = document.getElementById('formEmail').value;
+            const service = document.getElementById('formService').value;
+            const message = document.getElementById('formMessage').value;
+
+            const mailSubject = encodeURIComponent(`Portfolio Inquiry: ${service} - ${name}`);
+            const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nService Requested: ${service}\n\nOperation Details:\n${message}`);
+            
+            window.location.href = `mailto:Ruzzwsp16@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+        }
+    </script>
+</body>
+</html>
